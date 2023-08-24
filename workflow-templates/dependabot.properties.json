@@ -1,0 +1,6 @@
+{
+    "name": "Opdrachten Team Dependabot",
+    "description": "Dependabot that updates the dependencies, creates a PR and sends messages to Slack",
+    "iconName": "octicon hubot",
+    "filePatterns": ["Makefile"]
+}

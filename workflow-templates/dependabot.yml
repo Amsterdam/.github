@@ -1,0 +1,22 @@
+name: Opdrachten Team Dependabot
+
+on:
+  schedule: # Run the script on the 1st and 15th of every month
+    - cron: '0 6 1,15 * *'
+  workflow_dispatch:
+
+
+jobs:
+  dependabot:
+    name: Templates
+    uses: amsterdam/.github/workflows/dependabot.yml@v1
+    secrets: inherit
+    with:
+      check_diff: false
+      slack_channel: '<my-team>-dependabot'
+      timetell_code: 0
+      acceptance_pipeline: ""
+      production_pipeline: ""
+      acceptance_urls: ""
+      production_urls: ""
+

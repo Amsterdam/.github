@@ -7,6 +7,10 @@ on:
         description: 'Check major upgrades. Requires the Makefile target "diff"'
         type: boolean
         default: false
+      run_test:
+        description: 'Build image and run tests'
+        type: boolean
+        default: false
       slack_channel:
         description: 'Slack channel'
         type: string
@@ -41,11 +45,13 @@ jobs:
     - name: Update dependencies file
       run: make requirements
 
-#    - name: Docker build and push to GHCR
-#      uses: amsterdam/opdrachten-team-github-workflows/build-and-push@v1
-#
-#    - name: Run Tests
-#      run: make test
+    - name: Docker build and push to GHCR
+      if: ${{ inputs.run_tests }}
+      uses: amsterdam/opdrachten-team-github-workflows/build-and-push@v1
+
+    - name: Run Tests
+      if: ${{ inputs.run_tests }}
+      run: make test
 
     - name: Construct variables
       id: variables
