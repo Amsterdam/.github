@@ -1,4 +1,4 @@
-name: Opdrachten Team Dependabot
+name: Vakgroep SO Dependabot
 
 on:
   schedule: # Run the script on the 1st and 15th of every month
@@ -8,8 +8,8 @@ on:
 
 jobs:
   dependabot:
-    name: Templates
-    uses: amsterdam/opdrachten-team-github-workflows/.github/workflows/dependabot.yml@v1
+    name: Dependabot
+    uses: amsterdam/github-workflows/.github/workflows/dependabot.yml@v1
     secrets: inherit  # Inherit secrets from the repository. You need to define "SLACK_TOKEN" in settings -> secrets -> actions!
     with:
       check_diff: false  # Create a list of major upgrades. Needs the Makefile target "diff"

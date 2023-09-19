@@ -1,6 +1,6 @@
 {
-    "name": "Opdrachten Team Dependabot",
-    "description": "Dependabot that updates the dependencies, creates a PR and sends messages to Slack",
+    "name": "Vakgroep Software Ontwikkeling Dependabot",
+    "description": "Dependabot that updates the dependencies, creates a PR and sends messages to Slack. Requires 'requirements' and optionally 'diff' Makefile targets.",
     "iconName": "octicon hubot",
     "filePatterns": ["Makefile"]
 }
