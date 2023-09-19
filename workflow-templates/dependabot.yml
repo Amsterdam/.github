@@ -1,4 +1,6 @@
 name: Vakgroep SO Dependabot
+# This workflow assumes you have a Makefile in the root of your repository with the target "requirements"
+# The workflow will build the docker image with name "Dockerfile" in the root of the repository
 
 on:
   schedule: # Run the script on the 1st and 15th of every month
@@ -12,7 +14,7 @@ jobs:
     uses: amsterdam/github-workflows/.github/workflows/dependabot.yml@v1
     secrets: inherit  # Inherit secrets from the repository. You need to define "SLACK_TOKEN" in settings -> secrets -> actions!
     with:
-      check_diff: false  # Create a list of major upgrades. Needs the Makefile target "diff"
+      check_diff: false  # Create a list of major upgrades. Requires the Makefile target "diff"
       slack_channel: '<my-team>-dependabot'  # Slack channel to post release steps to
       timetell_code: 00000  # Timetell project id
       acceptance_pipeline: "https://ci.secure.amsterdam.nl/job/<my-project>/job/main/"
