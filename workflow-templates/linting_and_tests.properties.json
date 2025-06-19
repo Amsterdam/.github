@@ -1,6 +1,0 @@
-{
-    "name": "Vakgroep Software Ontwikkeling CI",
-    "description": "Linting and testing for the CI/CD pipeline. Requires 'test' and 'lint' Makefile targets.",
-    "iconName": "octicon bug",
-    "filePatterns": ["Makefile"]
-}
